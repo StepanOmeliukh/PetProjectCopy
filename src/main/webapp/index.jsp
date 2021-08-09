@@ -20,8 +20,9 @@
 </div>
 
 <div style="padding-left:16px">
-    <h2></h2>
-    <p></p>
+    <h2>
+        <p style="text-align: center"><button>Start your travel</button></p>
+        <p></p></h2>
 </div>
 
 </body>
