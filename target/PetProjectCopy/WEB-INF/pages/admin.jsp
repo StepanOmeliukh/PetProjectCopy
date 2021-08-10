@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Admin Page</title>
 </head>
 <style>
-    <%@include file="/WEB-INF/resources/css/managerStyle.css" %>
+    <%@include file="/WEB-INF/resources/css/adminStyle.css" %>
 </style>
 <body>
 
@@ -20,8 +20,8 @@
     <a href="#booking">Booking</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
-    <a href="#sign in" style="float:right" >Sign in</a>
-    <a href="#"style="float:right">Sign up</a>
+    <a href="#orders" style="float:right" >Orders</a>
+    <a href="#users"style="float:right">All users</a>
 </div>
 
 

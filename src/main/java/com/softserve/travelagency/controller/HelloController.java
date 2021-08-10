@@ -31,8 +31,8 @@ public class HelloController {
         return "booking";
     }
 
-    @GetMapping("/manager")
-    public String manager() {
-        return "manager";
+    @RequestMapping("/admin")
+    public String admin() {
+        return "admin";
     }
 }
