@@ -19,10 +19,10 @@
     <a href="#"style="float:right">Sign up</a>
 </div>
 
-<div style="padding-left:16px">
+<div class="centerBtn">
     <h2>
-        <p style="text-align: center"><button>Start your travel</button></p>
-        <p></p></h2>
+        <a  href="page/new.html" class="btn">Start your travel</a>
+    </h2>
 </div>
 
 </body>

@@ -17,4 +17,17 @@ public class HelloController {
     public String error() {
         return "error";
     }
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+    @RequestMapping("/register")
+    public String register() {
+        return "register";
+    }
+
+    @GetMapping("/manager")
+    public String manager() {
+        return "manager";
+    }
 }

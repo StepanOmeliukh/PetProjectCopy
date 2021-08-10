@@ -26,16 +26,3 @@ body {
     background-color: #04AA6D;
     color: white;
 }
-.btn {
-    display: inline-block;
-    background: #333333;
-    color: #fff;
-    padding: 1rem 1.5rem;
-    text-decoration: none;
-    border-radius: 3px;
-}
-.centerBtn {
-    padding-left:16px;
-    text-align: center;
-    margin-top: 20%;
-}

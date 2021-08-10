@@ -1,34 +1,28 @@
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../resources/css/loginStyle.css"/>
+
 </head>
 <style>
-
+    <%@include file="/WEB-INF/resources/css/loginStyle.css" %>
 </style>
 
 <body>
-<form action="action_page.php" method="post">
-    <div class="imgcontainer">
-        <img src="img" alt="ZALUPKA KONIA" class="avatar">
-    </div>
-
+<div class="allCenter">
     <div class="container">
         <%--@declare id="uname"--%><%--@declare id="psw"--%><label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+            <br>
+        <input type="text"  placeholder="Enter Username" name="uname" required>
+<br>
+        <label for="psw"><b>Password</b></label><br>
 
-        <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit">Login</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+<br>
+        <button type="submit" style="max-width: 20%">Login</button>
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
+    <div class="container"  >
+        <span class="psw">Back to <a href="#">home</a></span>
     </div>
-</form>
+</div>
 </body>
 </html>
