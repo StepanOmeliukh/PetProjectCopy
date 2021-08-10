@@ -1,47 +1,67 @@
 package com.softserve.travelagency.config;
 
+import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.sql.DataSource;
 import java.util.Properties;
 
-import com.softserve.travelagency.model.User;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.cfg.Environment;
-import org.hibernate.service.ServiceRegistry;
-
+@Configuration
+@EnableTransactionManagement
 public class HibernateConfig {
-    private static SessionFactory sessionFactory;
-    public static SessionFactory getSessionFactory() {
-        if (sessionFactory == null) {
-            try {
-                Configuration configuration = new Configuration();
 
-                // Hibernate settings equivalent to hibernate.cfg.xml's properties
-                Properties settings = new Properties();
-                settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/petProject?useSSL=false");
-                settings.put(Environment.USER, "root");
-                settings.put(Environment.PASS, "root");
-                settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
+    @Bean
+    public DataSource dataSource() {
+        BasicDataSource dataSource = new BasicDataSource();
 
-                settings.put(Environment.SHOW_SQL, "true");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/petproject"); //DB_CLOSE_DELAY=-1
+        dataSource.setUsername("root");
+        dataSource.setPassword("UKr_7083");
 
-                settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
+        return dataSource;
+    }
 
-                settings.put(Environment.HBM2DDL_AUTO, "create-drop");
+    @Bean
+    public LocalSessionFactoryBean sessionFactory() {
+        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+        sessionFactory.setDataSource(dataSource());
+        sessionFactory.setPackagesToScan(
+                "com.softserve.travelagency.model");
+        sessionFactory.setHibernateProperties(hibernateProperties());
 
-                configuration.setProperties(settings);
-
-                configuration.addAnnotatedClass(User.class);
-
-                ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-                        .applySettings(configuration.getProperties()).build();
-
-                sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
         return sessionFactory;
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager() {
+        HibernateTransactionManager transactionManager
+                = new HibernateTransactionManager();
+        transactionManager.setSessionFactory(sessionFactory().getObject());
+        return transactionManager;
+    }
+
+
+    private Properties hibernateProperties() {
+        Properties hibernateProperties = new Properties();
+
+        hibernateProperties.setProperty(
+                "hibernate.hbm2ddl.auto", "update");
+        hibernateProperties.setProperty(
+                "hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        hibernateProperties.setProperty(
+                "hibernate.hbm2ddl.auto", "create"
+        );
+        hibernateProperties.setProperty(
+                "hibernate.current_session_context_class", "thread");
+        hibernateProperties.setProperty("hibernate.show_sql", "true");
+        hibernateProperties.setProperty("hibernate.format_sql", "true");
+
+        return hibernateProperties;
     }
 }
