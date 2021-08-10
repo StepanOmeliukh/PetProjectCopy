@@ -19,17 +19,22 @@
         </div>
     </header>
     <section class="booking">
-        <form action="booking.html" class="booking_form" method="post">
+        <form action="booking" class="booking_form" method="post">
             <div class="dropdown">
-                <input class="mainmenubtn">Главное меню</input>
+                <input class="mainmenubtn" placeholder="Choise country"/>
                 <div class="dropdown-child">
-                    <a href="http://www.вашдомен.ru/page1.html">Подраздел 1</a>
-                    <a href="http://www.вашдомен.ru/page2.html">Подраздел 2</a>
-                    <a href="http://www.вашдомен.ru/page3.html">Подраздел 3</a>
-                    <a href="http://www.вашдомен.ru/page4.html">Подраздел 4</a>
-                    <a href="http://www.вашдомен.ru/page5.html">Подраздел 5</a>
+                    <button></button>
                 </div>
             </div>
+            <div class="dropdown2">
+                <input class="mainmenubtn2" placeholder="Choise hotel"/>
+                <div class="dropdown-child2">
+                    <button></button>
+                </div>
+            </div>
+            <input type="text" class="stars" placeholder="Stars">
+            <input type="text" class="beds" placeholder="beds in room">
+            <button class="search">Search</button>
         </form>
     </section>
     <section class="bookinh_list">

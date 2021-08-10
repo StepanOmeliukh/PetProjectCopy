@@ -21,7 +21,7 @@
 
 <div class="centerBtn">
     <h2>
-        <a  href="page/new.html" class="btn">Start your travel</a>
+        <a  href="booking" class="btn">Start your travel</a>
     </h2>
 </div>
 

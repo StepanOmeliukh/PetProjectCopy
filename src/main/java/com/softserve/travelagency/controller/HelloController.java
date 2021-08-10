@@ -26,6 +26,11 @@ public class HelloController {
         return "register";
     }
 
+    @RequestMapping("/booking")
+    public String booking() {
+        return "booking";
+    }
+
     @GetMapping("/manager")
     public String manager() {
         return "manager";
