@@ -37,14 +37,11 @@ public class HelloController {
         return "booking";
     }
 
-    @RequestMapping("/admin")
-    public String admin() {
-        return "admin";
-    }
-    @RequestMapping("/allUsers")
-    public String allUsers() {
-        return "allUsers";
-    }
+//    @RequestMapping("/admin")
+//    public String admin() {
+//        return "admin";
+//    }
+
 //    @GetMapping("/addHotel")
 ////    @PreAuthorize("hasAuthority('developers:edit')")
 //    public String newHotel(Model model) {

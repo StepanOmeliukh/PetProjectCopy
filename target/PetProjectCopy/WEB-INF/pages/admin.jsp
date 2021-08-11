@@ -21,7 +21,7 @@
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
             <a href="#orders" style="float:right" >Orders</a>
-            <a href="allUsers"style="float:right">All users</a>
+            <a href="#users"style="float:right">All users</a>
         </div>
     </header>
     <section>
@@ -41,6 +41,7 @@
         <form action="admin.jsp" class="add_hotel">
             <input type="text" class="room" placeholder="Enter room name">
 
+        </form>
     </section>
 
 </body>
