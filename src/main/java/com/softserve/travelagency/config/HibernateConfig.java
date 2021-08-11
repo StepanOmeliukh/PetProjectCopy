@@ -22,7 +22,7 @@ public class HibernateConfig {
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/petproject"); //DB_CLOSE_DELAY=-1
         dataSource.setUsername("root");
-        dataSource.setPassword("UKr_7083");
+        dataSource.setPassword("root");
 
         return dataSource;
     }
@@ -54,9 +54,9 @@ public class HibernateConfig {
                 "hibernate.hbm2ddl.auto", "update");
         hibernateProperties.setProperty(
                 "hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-        hibernateProperties.setProperty(
-                "hibernate.hbm2ddl.auto", "create"
-        );
+//        hibernateProperties.setProperty(
+//                "hibernate.hbm2ddl.auto", "create"
+//        );
         hibernateProperties.setProperty(
                 "hibernate.current_session_context_class", "thread");
         hibernateProperties.setProperty("hibernate.show_sql", "true");
