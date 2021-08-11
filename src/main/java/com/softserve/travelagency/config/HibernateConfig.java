@@ -39,7 +39,7 @@ public class HibernateConfig {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager() {
+    public HibernateTransactionManager transactionManager() {
         HibernateTransactionManager transactionManager
                 = new HibernateTransactionManager();
         transactionManager.setSessionFactory(sessionFactory().getObject());
@@ -54,9 +54,9 @@ public class HibernateConfig {
                 "hibernate.hbm2ddl.auto", "update");
         hibernateProperties.setProperty(
                 "hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-        hibernateProperties.setProperty(
-                "hibernate.hbm2ddl.auto", "create"
-        );
+//        hibernateProperties.setProperty(
+//                "hibernate.hbm2ddl.auto", "create"
+//        );
         hibernateProperties.setProperty(
                 "hibernate.current_session_context_class", "thread");
         hibernateProperties.setProperty("hibernate.show_sql", "true");

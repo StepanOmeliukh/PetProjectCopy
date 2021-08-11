@@ -25,10 +25,6 @@ public class Country {
     @Column(name = "country_name")
     private String countryName;
 
-    @NotNull
-    @Column(name = "city")
-    private String city ;
-
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, mappedBy = "country", fetch = FetchType.LAZY)
     private List<Hotel> hotels;
 }
