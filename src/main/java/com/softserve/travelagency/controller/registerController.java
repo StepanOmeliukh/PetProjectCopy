@@ -29,7 +29,7 @@ public class registerController {
 //
 //    }
     @PostMapping("/save")
-    public String addUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
+    public String addUser(@ModelAttribute("user") @Valid User user) {
         userService.saveUser(user);
         return "redirect:/register";
     }

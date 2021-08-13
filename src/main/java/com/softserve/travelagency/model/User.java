@@ -34,8 +34,8 @@ public class User {
     private String password;
 
     @NotNull
-//    @Email(message = "Incorrect email")
-//    @NotBlank(message = "Email cannot be empty")
+    @Email(message = "Incorrect email")
+    @NotBlank(message = "Email cannot be empty")
     @Column(unique = true, name = "email")
     private String email;
 
