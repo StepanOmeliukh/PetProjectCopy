@@ -18,7 +18,7 @@ import java.util.Optional;
 public class UserDaoImplementation implements UserDao {
     private final SessionFactory sessionFactory;
     @Override
-    public void saveUser(User user) {
+    public void (User user) {
         Session session = sessionFactory.getCurrentSession();
         Transaction transaction = session.beginTransaction();
 
@@ -89,5 +89,5 @@ public class UserDaoImplementation implements UserDao {
         transaction.commit();
     }
 }
-
+//
 

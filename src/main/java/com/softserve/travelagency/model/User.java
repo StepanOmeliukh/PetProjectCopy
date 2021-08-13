@@ -3,6 +3,8 @@ package com.softserve.travelagency.model;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.util.List;
@@ -23,7 +25,9 @@ public class User {
 
     @NotNull
 
-    @Column(name = "email")
+    @Email(message = "Incorrect email")
+    @NotBlank(message = "Email cannot be empty")
+    @Column(unique = true, name = "email")
     private String email;
 
     @NotNull
@@ -45,4 +49,4 @@ public class User {
 //    private List<Order> orders;
 
     //тРЕБА СТОВРИТИ ЕНАМИ
-}
+}//
