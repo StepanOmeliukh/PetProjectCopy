@@ -37,7 +37,7 @@ public class Booking {
     @Column(name = "booking_closed")
     private boolean bookingClosed;
 
-    @NotNull
+//    @NotNull
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;

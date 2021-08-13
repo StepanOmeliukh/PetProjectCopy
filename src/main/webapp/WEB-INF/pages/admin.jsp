@@ -1,6 +1,5 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: bufan
@@ -27,12 +26,12 @@
             <a href="#users"style="float:right">All users</a>
         </div>
     </header>
-<%--    <section>--%>
-<%--        <h2>Add Country</h2>--%>
-<%--        <form:form action="admin" class="add_hotel" method="post" modelAttribute="country">--%>
-<%--            <form:input placeholder="Enter country name" path="countryName"/>--%>
-<%--            <input type="submit" class="submit">--%>
-<%--        </form:form>--%>
+    <section>
+        <h2>Add Country</h2>
+        <form action="/admin/save" method="post">
+            <input type="text" name="countryName">
+            <button type="submit">Submit</button>
+        </form>
 
 <%--        <h2>Add Hotel</h2>--%>
 <%--        <form:form action="admin.jsp" class="add_hotel">--%>
@@ -45,7 +44,7 @@
 <%--            <input type="text" class="room" placeholder="Enter room name">--%>
 
 <%--        </form:form>--%>
-<%--    </section>--%>
+    </section>
     <section>
         <label>
             Country list:

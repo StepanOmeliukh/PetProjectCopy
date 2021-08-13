@@ -32,11 +32,6 @@ public class HelloController {
         return "register";
     }
 
-    @RequestMapping("/booking")
-    public String booking() {
-        return "booking";
-    }
-
 //    @RequestMapping("/admin")
 //    public String admin() {
 //        return "admin";
