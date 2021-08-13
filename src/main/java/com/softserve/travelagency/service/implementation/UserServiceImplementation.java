@@ -19,7 +19,7 @@ public class UserServiceImplementation implements UserService {
     private final UserDao userDao;
 
     @Override
-    public boolean addUser(User user) {
+    public boolean saveUser(User user) {
         Optional<User> userDatabase = userDao.getUserByEmail(user.getEmail());
 
         if (userDatabase.isPresent()) {

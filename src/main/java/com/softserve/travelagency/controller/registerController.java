@@ -21,7 +21,7 @@ public class registerController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/registration")
+    @GetMapping("/register")
     public String registration(Model model) {
         model.addAttribute("user", new User());
 
@@ -35,7 +35,7 @@ public class registerController {
             return "register";
         }
 
-        if (!userService.addUser(user)) {
+        if (!userService.saveUser(user)) {
             return "register";
         }
 

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserService {
 
-    boolean addUser(User user);
+    boolean saveUser(User user);
 
     User getUserById(Long id);
 
