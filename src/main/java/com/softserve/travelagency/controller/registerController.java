@@ -21,24 +21,16 @@ public class registerController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/register")
-    public String registration(Model model) {
-        model.addAttribute("user", new User());
-
-        return "register";
-
-    }
-    @PostMapping("/add")
-    public String addUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult, Model model) {
-
-        if (bindingResult.hasErrors()) {
-            return "register";
-        }
-
-        if (!userService.saveUser(user)) {
-            return "register";
-        }
-
-        return "redirect:/login";
+//    @GetMapping("/register")
+//    public String registration(Model model) {
+//        model.addAttribute("user", new User());
+//
+//        return "register";
+//
+//    }
+    @PostMapping("/save")
+    public String addUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
+        userService.saveUser(user);
+        return "redirect:/register";
     }
 }

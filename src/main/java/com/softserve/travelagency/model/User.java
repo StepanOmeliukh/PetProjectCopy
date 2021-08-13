@@ -9,8 +9,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.util.List;
 
-@Data
-@Builder
+//@Data
+//@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -24,21 +24,20 @@ public class User {
     private Long id;
 
     @NotNull
-
-    @Email(message = "Incorrect email")
-    @NotBlank(message = "Email cannot be empty")
-    @Column(unique = true, name = "email")
-    private String email;
-
-    @NotNull
-    @Pattern(regexp = "[A-Z][a-z]+(-[A-Z][a-z]+)?")
+//    @Pattern(regexp = "[A-Z][a-z]+(-[A-Z][a-z]+)?")
     @Column(name = "username")
     private String username;
 
     @NotNull
-    @Pattern(regexp = "[A-Z][a-z]+(-[A-Z][a-z]+)?")
+//    @Pattern(regexp = "[A-Z][a-z]+(-[A-Z][a-z]+)?")
     @Column(name = "password")
     private String password;
+
+    @NotNull
+//    @Email(message = "Incorrect email")
+//    @NotBlank(message = "Email cannot be empty")
+    @Column(unique = true, name = "email")
+    private String email;
 
 //    @OneToMany(cascade = CascadeType.ALL,
 //            mappedBy = "hotel")

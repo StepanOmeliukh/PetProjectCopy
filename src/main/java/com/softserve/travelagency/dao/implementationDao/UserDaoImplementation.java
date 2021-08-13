@@ -25,10 +25,9 @@ public class UserDaoImplementation implements UserDao {
     public void saveUser(User user) {
         Session session = sessionFactory.getCurrentSession();
         Transaction transaction = session.beginTransaction();
-
         session.save(user);
-
         transaction.commit();
+        session.close();
     }
 
     @Override
