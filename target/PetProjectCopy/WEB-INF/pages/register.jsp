@@ -9,33 +9,29 @@
 <style>
     <%@include file="/WEB-INF/resources/css/registerStyle.css" %>
 </style>
-
 <body>
-<form:form class="form-signin" method="post" action="/" modelAttribute="user">
+<form action="/register/add" method="post">
 <div class="allCenter" style="margin-top: 8%">
     <div class="container">
         <%--@declare id="uname"--%><%--@declare id="psw"--%>
             <label for="uname"><b>Username</b></label><br>
-
-        <input type="text"  placeholder="Create Username" name="uname" required><br>
+        <input type="text"  placeholder="Create Username" name="username" required><br>
 
         <label for="psw"><b>Password</b></label><br>
 
-        <input type="password" placeholder="Create Password" name="psw" required><br>
+        <input type="password" placeholder="Create Password" name="password" required><br>
 
             <label for="uname"><b>Email</b></label><br>
 
             <input type="email" placeholder="Write your email" name="email" required><br>
 
-            <form action="/">
                 <input type="submit" value="Sign up" />
-            </form>
     </div>
 
     <div class="container"  >
         <span class="psw">Back to <a href="">home</a></span>
     </div>
 </div>
-</form:form>
+</form>
 </body>
-</html>
+</html>//

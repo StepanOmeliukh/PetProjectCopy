@@ -4,6 +4,7 @@ import com.softserve.travelagency.dao.UserDao;
 import com.softserve.travelagency.model.User;
 import com.softserve.travelagency.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,9 @@ import java.util.Optional;
 @AllArgsConstructor
 public class UserServiceImplementation implements UserService {
 
-    private UserDao userDao;
+    @Autowired
+    private final UserDao userDao;
+
     @Override
     public boolean addUser(User user) {
         Optional<User> userDatabase = userDao.getUserByEmail(user.getEmail());

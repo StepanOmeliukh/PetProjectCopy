@@ -44,7 +44,6 @@
 <%--            <input type="text" class="room" placeholder="Enter room name">--%>
 
 <%--        </form:form>--%>
-<%--        --%>
     </section>
     <section>
         <label>

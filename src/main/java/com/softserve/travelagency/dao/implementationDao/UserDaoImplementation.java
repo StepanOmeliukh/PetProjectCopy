@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.hibernate.Session;
 
@@ -16,9 +17,12 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 public class UserDaoImplementation implements UserDao {
+
+    @Autowired
     private final SessionFactory sessionFactory;
+
     @Override
-    public void (User user) {
+    public void saveUser(User user) {
         Session session = sessionFactory.getCurrentSession();
         Transaction transaction = session.beginTransaction();
 
@@ -48,7 +52,7 @@ public class UserDaoImplementation implements UserDao {
         Transaction transaction = session.beginTransaction();
 
         try {
-            Query query = session.createQuery("FROM User 0 WHERE O.email = :email", User.class);
+            Query query = session.createQuery("FROM User u WHERE u.email = :email", User.class);
             query.setParameter("email", email);
             User user = (User) query.uniqueResult();
             return Optional.of(user);
