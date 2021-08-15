@@ -3,7 +3,6 @@ package com.softserve.travelagency.dao.Country;
 import com.softserve.travelagency.model.Country;
 
 import java.util.List;
-import java.util.Set;
 
 public interface CountryDAO {
 

@@ -1,6 +1,7 @@
-package com.softserve.travelagency.dao.Country;
+package com.softserve.travelagency.dao.Hotel;
 
 import com.softserve.travelagency.model.Country;
+import com.softserve.travelagency.model.Hotel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,18 +14,18 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
-public class CountryDAOImpl implements CountryDAO {
+public class HotelDAOImpl implements HotelDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
-    public List<Country> getCountries() {
+    public List<Hotel> getHotels() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         CriteriaBuilder cb = session.getCriteriaBuilder();
-        CriteriaQuery< Country > cq = cb.createQuery(Country.class);
-        Root< Country > root = cq.from(Country.class);
+        CriteriaQuery< Hotel > cq = cb.createQuery(Hotel.class);
+        Root< Hotel > root = cq.from(Hotel.class);
         cq.select(root);
         Query query = session.createQuery(cq);
         List result = query.getResultList();
@@ -34,24 +35,24 @@ public class CountryDAOImpl implements CountryDAO {
     }
 
     @Override
-    public void saveCountry(Country country) {
+    public void saveHotel(Hotel hotel) {
         Session currentSession = sessionFactory.getCurrentSession();
         currentSession.beginTransaction();
-        currentSession.saveOrUpdate(country);
+        currentSession.saveOrUpdate(hotel);
         currentSession.getTransaction().commit();
         currentSession.close();
     }
 
     @Override
-    public Country getCountry(Long id) {
+    public Hotel getHotel(Long id) {
         Session currentSession = sessionFactory.getCurrentSession();
-        return currentSession.get(Country.class, id);
+        return currentSession.get(Hotel.class, id);
     }
 
     @Override
-    public void deleteCountry(Long id) {
+    public void deleteHotel(Long id) {
         Session session = sessionFactory.getCurrentSession();
-        Country country = session.byId(Country.class).load(id);
-        session.delete(country);
+        Hotel hotel = session.byId(Hotel.class).load(id);
+        session.delete(hotel);
     }
 }

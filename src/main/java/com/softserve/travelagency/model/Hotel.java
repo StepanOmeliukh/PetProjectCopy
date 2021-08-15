@@ -22,10 +22,13 @@ public class Hotel {
     private Long id;
 
     @NotNull
-    @Pattern(regexp = "[A-Z][a-z]+(-[A-Z][a-z]+)?", message = "Incorrect name")
+//    @Pattern(regexp = "[A-Z][a-z]+(-[A-Z][a-z]+)?", message = "Incorrect name")
     @Column(name = "hotel_name")
     private String hotelName;
 
+    @NotNull
+    @Column(name = "stars")
+    private String stars;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id")

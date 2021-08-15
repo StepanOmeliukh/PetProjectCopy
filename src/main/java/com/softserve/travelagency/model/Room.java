@@ -34,6 +34,10 @@ public class Room {
     private int price;
 
     @NotNull
+    @Column(name = "active")
+    private boolean booked;
+
+    @NotNull
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "hotel_id")
     private Hotel hotel;

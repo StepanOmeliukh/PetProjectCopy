@@ -36,7 +36,7 @@ public class User {
     @NotNull
     @Email(message = "Incorrect email")
     @NotBlank(message = "Email cannot be empty")
-    @Column(unique = true, name = "email")
+    @Column(name = "email")
     private String email;
 
 //    @OneToMany(cascade = CascadeType.ALL,
