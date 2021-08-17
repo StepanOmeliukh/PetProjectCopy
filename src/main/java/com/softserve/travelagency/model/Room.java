@@ -1,10 +1,12 @@
 package com.softserve.travelagency.model;
 
+import com.softserve.travelagency.model.enums.RoomsType;
 import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -22,8 +24,8 @@ public class Room {
     private Long id;
 
     @NotNull
-    @Column(name = "numbers_of_beds")
-    private String numbersOfBeds;
+    @Column(name = "room_types")
+    private String roomsType;
 
     @NotNull
     @Column(name = "catering_service")
@@ -31,11 +33,17 @@ public class Room {
 
     @NotNull
     @Column(name = "price")
-    private int price;
+    private Integer price;
 
     @NotNull
     @Column(name = "active")
     private boolean booked;
+
+    @Column(name = "enter_time")
+    private String enterDateTime;
+
+    @Column(name = "departure_time")
+    private String departureDateTime;
 
     @NotNull
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)

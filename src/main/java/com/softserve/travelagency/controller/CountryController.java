@@ -13,21 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin/country")
 public class CountryController {
 
     @Autowired
     private CountryService countryService;
 
-    @GetMapping("/list")
-    public String listCountry(Model model) {
-        List<Country> countries = countryService.getCountries();
-        model.addAttribute("countries", countries);
-        return "admin";
-    }
-
     @PostMapping("/save")
-    public String saveCountry(@ModelAttribute("country") Country country) {
+    public String saveCountry( Country country) { //@ModelAttribute("country")
         countryService.saveCountry(country);
         return "redirect:/admin/list";
     }

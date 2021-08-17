@@ -1,7 +1,7 @@
-package com.softserve.travelagency.dao.Country;
+package com.softserve.travelagency.dao.Room;
 
 import com.softserve.travelagency.model.Country;
-import com.softserve.travelagency.model.User;
+import com.softserve.travelagency.model.Room;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,21 +12,20 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
-public class CountryDAOImpl implements CountryDAO {
+public class RoomDAOImpl implements RoomDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
-    public List<Country> getCountries() {
+    public List<Room> getRooms() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         CriteriaBuilder cb = session.getCriteriaBuilder();
-        CriteriaQuery< Country > cq = cb.createQuery(Country.class);
-        Root< Country > root = cq.from(Country.class);
+        CriteriaQuery<Room> cq = cb.createQuery(Room.class);
+        Root< Room > root = cq.from(Room.class);
         cq.select(root);
         Query query = session.createQuery(cq);
         List result = query.getResultList();
@@ -35,36 +34,24 @@ public class CountryDAOImpl implements CountryDAO {
     }
 
     @Override
-    public void saveCountry(Country country) {
+    public void saveRoom(Room room) {
         Session currentSession = sessionFactory.getCurrentSession();
         currentSession.beginTransaction();
-        currentSession.saveOrUpdate(country);
+        currentSession.saveOrUpdate(room);
         currentSession.getTransaction().commit();
         currentSession.close();
     }
 
     @Override
-    public Country getCountry(Long id) {
+    public Room getRoom(Long id) {
         Session currentSession = sessionFactory.getCurrentSession();
-        return currentSession.get(Country.class, id);
+        return currentSession.get(Room.class, id);
     }
 
     @Override
-    public void deleteCountry(Long id) {
+    public void deleteRoom(Long id) {
         Session session = sessionFactory.getCurrentSession();
-        Country country = session.byId(Country.class).load(id);
-        session.delete(country);
-    }
-
-    @Override
-    public Country getCountryByUsername(String username) {
-        Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
-
-        Query query = session.createQuery("FROM Country c WHERE c.countryName = :countryName", Country.class);
-        query.setParameter("countryName", username);
-        Country result = (Country) query.getSingleResult();
-        session.getTransaction().commit();
-        return result;
+        Room room = session.byId(Room.class).load(id);
+        session.delete(room);
     }
 }

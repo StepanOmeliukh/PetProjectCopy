@@ -2,6 +2,7 @@ package com.softserve.travelagency.dao.Hotel;
 
 import com.softserve.travelagency.model.Country;
 import com.softserve.travelagency.model.Hotel;
+import com.softserve.travelagency.service.Country.CountryService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class HotelDAOImpl implements HotelDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
+    @Autowired
+    private CountryService countryService;
 
     @Override
     public List<Hotel> getHotels() {
@@ -30,6 +33,7 @@ public class HotelDAOImpl implements HotelDAO {
         Query query = session.createQuery(cq);
         List result = query.getResultList();
         session.getTransaction().commit();
+        session.close();
         return result;
 
     }
@@ -55,4 +59,32 @@ public class HotelDAOImpl implements HotelDAO {
         Hotel hotel = session.byId(Hotel.class).load(id);
         session.delete(hotel);
     }
+
+    @Override
+    public List<Hotel> findHotelByCountryName(String countryName) {
+        Country country = countryService.getCountryByUsername(countryName);
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+
+        Query query = session.createQuery("FROM Hotel h WHERE country.id = :country_id", Hotel.class);
+        query.setParameter("country_id", country.getId());
+        List<Hotel> resultList = query.getResultList();
+
+        session.getTransaction().commit();
+        session.close();
+        return resultList;
+    }
+
+    @Override
+    public Hotel getHotelByUsername(String username) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+
+        Query query = session.createQuery("FROM Hotel h WHERE h.hotelName = :hotelName", Hotel.class);
+        query.setParameter("hotelName", username);
+        Hotel result = (Hotel) query.getSingleResult();
+        session.getTransaction().commit();
+        return result;
+    }
+
 }

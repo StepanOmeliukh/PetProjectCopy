@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface CountryDAO {
 
-    public List<Country> getCountries();
-    public void saveCountry(Country country);
-    public Country getCountry(Long id);
-    public void deleteCountry(Long id);
+    List<Country> getCountries();
+    void saveCountry(Country country);
+    Country getCountry(Long id);
+    void deleteCountry(Long id);
+    Country getCountryByUsername(String username);
 }

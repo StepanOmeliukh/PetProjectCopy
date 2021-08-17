@@ -11,10 +11,11 @@
 
 </head>
 <div class="topnav">
-    <a class="active" href="#home">Home</a>
+    <a class="active" href="/">Home</a>
     <a href="/booking">Booking</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
+    <a href="/admin/list">Admin</a>
     <a href="/login" style="float:right" >Sign in</a>
     <a href="/register"style="float:right">Sign up</a>
 </div>

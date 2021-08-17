@@ -22,31 +22,25 @@
         </div>
     </header>
     <section class="booking">
-        <form action="booking" class="booking_form" method="post">
+        <form action="booking/filter" class="booking_form" method="post">
             <div class="custom-select" style="width:40%;">
-                <form action="/booking">
-                    <label for="selectField">
-                        Choose country:
-                        <select style="width: 100%; height: 30px" id="selectField" name="country" onclick="{
-                            if (document.getElementById('selectField').options.selectedIndex !== 0)
-                                document.getElementById('select').style.display = 'block';
-                            else
-                                document.getElementById('select').style.display = 'none';
-                        }">
-                            <c:forEach var="country" items="${countries}">
-                                <option value="${country.countryName}">${country.countryName}</option>
-                            </c:forEach>
-                        </select>
-                    </label>
-                </form>
-            </div>
-            <div class="custom-select" id="select" style="width:40%; display: none">
-                <label>
-                    Choose hotel:
-                    <select style="width: 100%; height: 30px" name="hotel" >
-                        <c:forEach var="hotel" items="${hotels}">
-                            <option class="select" value="${hotel.hotelName}">${hotel.hotelName}</option>
+                <label for="selectField">
+                    Choose country:
+                    <select style="width: 100%; height: 30px" id="selectField" name="country">
+                        <c:forEach var="country" items="${countries}">
+                            <option value="${country.countryName}">${country.countryName}</option>
                         </c:forEach>
+                    </select>
+                </label>
+            </div>
+            <div class="custom-select" id="select" style="width:40%;">
+                <label>
+                    Number of beds:
+                    <select style="width: 100%; height: 30px" name="beds">
+                        <option value="0">One</option>
+                        <option value="1">Two</option>
+                        <option value="2">Three</option>
+                        <option value="3">Four</option>
                     </select>
                 </label>
             </div>
@@ -89,9 +83,11 @@
             <input type="submit" class="book" placeholder="Book">
         </form>
     </section>
-    <section class="bookinh_list">
-
-    </section>
+<%--    <section class="bookinh_list">--%>
+<%--        <c:forEach var="" items="">--%>
+<%--            m--%>
+<%--        </c:forEach>--%>
+<%--    </section>--%>
     <footer>
 
     </footer>

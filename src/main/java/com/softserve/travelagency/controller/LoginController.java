@@ -11,9 +11,8 @@ public class LoginController {
         return "login";
     }
 
-    @GetMapping("/hello ")
+    @GetMapping("/welcome")
     public String getSuccessPage() {
-        return "hello";
+        return "welcome";
     }
 }
-//

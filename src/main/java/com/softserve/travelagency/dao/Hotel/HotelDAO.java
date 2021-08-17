@@ -7,8 +7,10 @@ import java.util.List;
 
 public interface HotelDAO {
 
-    public List<Hotel> getHotels();
-    public void saveHotel(Hotel hotel);
-    public Hotel getHotel(Long id);
-    public void deleteHotel(Long id);
+    List<Hotel> getHotels();
+    void saveHotel(Hotel hotel);
+    Hotel getHotel(Long id);
+    void deleteHotel(Long id);
+    List<Hotel> findHotelByCountryName(String countryName);
+    Hotel getHotelByUsername(String username);
 }

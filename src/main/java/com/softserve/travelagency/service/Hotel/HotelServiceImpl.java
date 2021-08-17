@@ -1,6 +1,5 @@
 package com.softserve.travelagency.service.Hotel;
 
-import com.softserve.travelagency.dao.Country.CountryDAO;
 import com.softserve.travelagency.dao.Hotel.HotelDAO;
 import com.softserve.travelagency.model.Country;
 import com.softserve.travelagency.model.Hotel;
@@ -38,5 +37,17 @@ public class HotelServiceImpl implements HotelService {
     @Transactional
     public void deleteHotel(Long id) {
         hotelDAO.deleteHotel(id);
+    }
+
+    @Override
+    @Transactional
+    public List<Hotel> findHotelByCountryName(String countryName) {
+        return hotelDAO.findHotelByCountryName(countryName);
+    }
+
+    @Override
+    @Transactional
+    public Hotel getHotelByUsername(String username) {
+        return hotelDAO.getHotelByUsername(username);
     }
 }
