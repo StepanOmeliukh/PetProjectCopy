@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.hibernate.Session;
 
@@ -18,11 +17,10 @@ import java.util.Optional;
 @AllArgsConstructor
 public class UserDaoImplementation implements UserDao {
 
-    @Autowired
     private final SessionFactory sessionFactory;
 
     @Override
-    public void saveUser(User user) {
+    public void addUser(User user) {
         Session session = sessionFactory.getCurrentSession();
         Transaction transaction = session.beginTransaction();
         session.save(user);

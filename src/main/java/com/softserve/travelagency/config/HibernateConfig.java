@@ -53,10 +53,10 @@ public class HibernateConfig {
         hibernateProperties.setProperty(
                 "hibernate.hbm2ddl.auto", "update");
         hibernateProperties.setProperty(
-                "hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-//        hibernateProperties.setProperty(
-//                "hibernate.hbm2ddl.auto", "create"
-//        );
+                "hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
+        hibernateProperties.setProperty(
+                "hibernate.hbm2ddl.auto", "create"
+        );
         hibernateProperties.setProperty(
                 "hibernate.current_session_context_class", "thread");
         hibernateProperties.setProperty("hibernate.show_sql", "true");

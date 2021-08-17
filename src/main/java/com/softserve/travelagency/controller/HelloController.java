@@ -14,32 +14,19 @@ import javax.validation.Valid;
 @Controller
 public class HelloController {
 
-    @RequestMapping("/hello")
-    public String printWelcome() {
-        return "hello";
-    }
 
     @RequestMapping("/error")
     public String error() {
         return "error";
     }
-    @RequestMapping("/login")
-    public String login() {
-        return "login";
-    }
-    @RequestMapping("/register")
-    public String register() {
-        return "register";
-    }
-    @RequestMapping("/training")
-    public String training() {
-        return "training";
-    }
-
-//    @RequestMapping("/admin")
-//    public String admin() {
-//        return "admin";
+//    @RequestMapping("/login")
+//    public String login() {
+//        return "login";
 //    }
+    @RequestMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
 
 //    @GetMapping("/addHotel")
 ////    @PreAuthorize("hasAuthority('developers:edit')")

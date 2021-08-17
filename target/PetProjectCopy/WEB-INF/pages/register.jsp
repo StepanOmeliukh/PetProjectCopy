@@ -10,28 +10,30 @@
     <%@include file="/WEB-INF/resources/css/registerStyle.css" %>
 </style>
 <body>
-<form action="/register/add" method="post">
-<div class="allCenter" style="margin-top: 8%">
-    <div class="container">
-        <%--@declare id="uname"--%><%--@declare id="psw"--%>
-            <label for="uname"><b>Username</b></label><br>
-        <input type="text"  placeholder="Create Username" name="username" required><br>
-
-        <label for="psw"><b>Password</b></label><br>
-
-        <input type="password" placeholder="Create Password" name="password" required><br>
-
-            <label for="uname"><b>Email</b></label><br>
-
-            <input type="email" placeholder="Write your email" name="email" required><br>
-
-                <input type="submit" value="Sign up" />
-    </div>
-
-    <div class="container"  >
-        <span class="psw">Back to <a href="">home</a></span>
-    </div>
+<form:form class="form-signin" method="post" action="/registration/register" modelAttribute="user">
+    <h2>Please sign in</h2>
+    <p>
+        <label for="email" >Email </label>
+        <form:input type="text" path="email" id="Email" placeholder="Email"/>
+        <form:errors path="email"/>
+    </p>
+    <p>
+        <label for="firstName" >First name</label>
+        <form:input type="text" id="firstName" path="firstName" class="form-control" placeholder="First name"/>
+        <form:errors path="firstName"/>
+    </p>
+    <p>
+        <label for="lastName" >Last name</label>
+        <form:input type="text" id="lastName" path="lastName" class="form-control" placeholder="Last name"/>
+        <form:errors path="lastName"/>
+    </p>
+    <p>
+        <label for="password" >Password</label>
+        <form:input type="password" id="password" path="password" class="form-control" placeholder="Password"/>
+        <form:errors path="password"/>
+    </p>
+    <button type="submit">Sign up</button>
+</form:form>
 </div>
-</form>
 </body>
 </html>//

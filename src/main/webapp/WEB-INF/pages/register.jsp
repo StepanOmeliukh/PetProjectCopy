@@ -4,36 +4,36 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <style>
-        <%@include file="/WEB-INF/resources/css/registerStyle.css" %>
-    </style>
+
 </head>
+<style>
+    <%@include file="/WEB-INF/resources/css/registerStyle.css" %>
+</style>
 <body>
-        <div class="allCenter" style="margin-top: 8%">
-                <div class="container">
-                    <form action="/register/save" method="post">
-                        <label>
-                            Username:
-                            <input type="text"  placeholder="Create Username" name="username" required>
-                        </label><br>
-
-                        <label>
-                            Password:
-                            <input type="password" placeholder="Create Password" name="password" required>
-                        </label><br>
-
-                        <label>
-                            Email:
-                            <input type="email" placeholder="Write your email" name="email" required>
-                        </label><br>
-
-                        <button type="submit">Sign up</button>
-                    </form>
-                </div>
-
-            <div class="container"  >
-                <span class="psw">Back to <a href="">home</a></span>
-            </div>
-        </div>
+<form:form class="form-signin" method="post" action="/registration/register" modelAttribute="user">
+    <h2>Please sign in</h2>
+    <p>
+        <label for="email" >Email </label>
+        <form:input type="text" path="email" id="Email" placeholder="Email"/>
+        <form:errors path="email"/>
+    </p>
+    <p>
+        <label for="firstName" >First name</label>
+        <form:input type="text" id="firstName" path="firstName" class="form-control" placeholder="First name"/>
+        <form:errors path="firstName"/>
+    </p>
+    <p>
+        <label for="lastName" >Last name</label>
+        <form:input type="text" id="lastName" path="lastName" class="form-control" placeholder="Last name"/>
+        <form:errors path="lastName"/>
+    </p>
+    <p>
+        <label for="password" >Password</label>
+        <form:input type="password" id="password" path="password" class="form-control" placeholder="Password"/>
+        <form:errors path="password"/>
+    </p>
+    <button type="submit">Sign up</button>
+</form:form>
+</div>
 </body>
-</html>
+</html>//
