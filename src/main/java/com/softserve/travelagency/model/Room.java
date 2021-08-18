@@ -1,6 +1,6 @@
 package com.softserve.travelagency.model;
 
-import com.softserve.travelagency.model.enums.RoomsType;
+
 import lombok.*;
 
 import javax.persistence.*;

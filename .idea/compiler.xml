@@ -7,9 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PetProject" />
-        <module name="PetProjectCopy" />
+        <module name="TravelAgency" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TravelAgency" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

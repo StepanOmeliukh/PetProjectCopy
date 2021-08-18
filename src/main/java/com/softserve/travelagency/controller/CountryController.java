@@ -1,7 +1,7 @@
 package com.softserve.travelagency.controller;
 
 import com.softserve.travelagency.model.Country;
-import com.softserve.travelagency.service.Country.CountryService;
+import com.softserve.travelagency.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -2,8 +2,8 @@ package com.softserve.travelagency.controller;
 
 import com.softserve.travelagency.model.Hotel;
 import com.softserve.travelagency.model.Room;
-import com.softserve.travelagency.service.Hotel.HotelService;
-import com.softserve.travelagency.service.Room.RoomService;
+import com.softserve.travelagency.service.HotelService;
+import com.softserve.travelagency.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;

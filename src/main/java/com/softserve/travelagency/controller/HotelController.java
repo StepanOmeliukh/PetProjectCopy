@@ -4,12 +4,9 @@ package com.softserve.travelagency.controller;
 import com.softserve.travelagency.model.Country;
 import com.softserve.travelagency.model.Hotel;
 import com.softserve.travelagency.model.Room;
-import com.softserve.travelagency.model.enums.RoomsType;
-import com.softserve.travelagency.model.enums.Stars;
-import com.softserve.travelagency.service.Country.CountryService;
-import com.softserve.travelagency.service.Hotel.HotelService;
-import com.softserve.travelagency.service.Room.RoomService;
-import com.sun.xml.bind.v2.TODO;
+import com.softserve.travelagency.model.util.RoomType;
+import com.softserve.travelagency.service.CountryService;
+import com.softserve.travelagency.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,7 +44,7 @@ public class HotelController {
 
         model.addAttribute("countries", countries);
         model.addAttribute("filteredHotels", hotels);
-        model.addAttribute("roomsType", RoomsType.values());
+        model.addAttribute("roomsType", RoomType.values());
         return "admin";
     }
 }
