@@ -34,14 +34,7 @@ public class Hotel {
     @JoinColumn(name = "country_id")
     private Country country;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "hotel", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "hotel_id")
     private List<Room> rooms;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable (
-            name = "booking_has_hotel",
-            joinColumns = @JoinColumn(name = "hotel_id"),
-            inverseJoinColumns = @JoinColumn(name = "booking_id")
-    )
-    private List<Booking> bookings;
 }

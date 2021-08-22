@@ -22,11 +22,11 @@
         </div>
     </header>
     <section class="booking">
-        <form action="booking/filter" class="booking_form" method="post">
+        <form action="/booking/filter" class="booking_form" method="post">
             <div class="custom-select" style="width:40%;">
                 <label for="selectField">
                     Choose country:
-                    <select style="width: 100%; height: 30px" id="selectField" name="country">
+                    <select style="width: 100%; height: 30px" id="selectField" name="countryName">
                         <c:forEach var="country" items="${countries}">
                             <option value="${country.countryName}">${country.countryName}</option>
                         </c:forEach>
@@ -36,11 +36,10 @@
             <div class="custom-select" id="select" style="width:40%;">
                 <label>
                     Number of beds:
-                    <select style="width: 100%; height: 30px" name="beds">
-                        <option value="0">One</option>
-                        <option value="1">Two</option>
-                        <option value="2">Three</option>
-                        <option value="3">Four</option>
+                    <select style="width: 100%; height: 30px" name="roomsType">
+                        <c:forEach var="roomsType" items="${roomsType}">
+                            <option value="${roomsType}">${roomsType}</option>
+                        </c:forEach>
                     </select>
                 </label>
             </div>
@@ -48,54 +47,35 @@
                 <label>
                     Choose number of stars:
                     <select style="width: 100%; height: 30px" name="stars">
-                        <option value="0">One</option>
-                        <option value="1">Two</option>
-                        <option value="2">Three</option>
-                        <option value="3">Four</option>
-                        <option value="4">Five</option>
+                        <c:forEach var="stars" items="${stars}">
+                            <option value="${stars}">${stars}</option>
+                        </c:forEach>
                     </select>
                 </label>
             </div>
             <div class="custom-select" id="select3" style="width:40%;">
                 <label>
                     Do you want cleaning?
-                    <select style="width: 100%; height: 30px" name="country" >
-                        <option value="0">Yes</option>
-                        <option value="1">No</option>
+                    <select name="cateringService">
+                        <option [ngValue]="true">Yes</option>
+                        <option [ngValue]="false">No</option>
                     </select>
                 </label>
             </div>
             <div class="enter_time" id="select4" style="margin-left: 5%; ">
                 <label>
                     Enterence date and time:
-                    <input type="datetime-local">
+                    <input type="date" name="dateOfEntrance">
                 </label>
             </div>
             <div class="departure_time" id="select5">
                 <label>
                     Departure date and time:
-                    <input type="datetime-local">
+                    <input type="date" name="dateOfDeparture">
                 </label>
             </div>
-            <div class="price">
-
-            </div><br>
             <input type="submit" class="book" placeholder="Book">
         </form>
     </section>
-<%--    <section class="bookinh_list">--%>
-<%--        <c:forEach var="" items="">--%>
-<%--            m--%>
-<%--        </c:forEach>--%>
-<%--    </section>--%>
-    <footer>
-
-    </footer>
 </body>
-<script type="text/javascript">
-    function country() {
-        console.log("smth");
-        document.getElementById('select2').style.display = "block";
-    }
-</script>
 </html>

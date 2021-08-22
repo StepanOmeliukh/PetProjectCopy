@@ -35,18 +35,21 @@ public class Room {
     @Column(name = "price")
     private Integer price;
 
-    @NotNull
-    @Column(name = "active")
-    private boolean booked;
-
-    @Column(name = "enter_time")
-    private String enterDateTime;
-
-    @Column(name = "departure_time")
-    private String departureDateTime;
+//    @NotNull
+//    @Column(name = "active")
+//    private boolean booked;
+//
+//    @Column(name = "enter_time")
+//    private String enterDateTime;
+//
+//    @Column(name = "departure_time")
+//    private String departureDateTime;
 
     @NotNull
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "hotel_id")
     private Hotel hotel;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "room")
+    private List<Booking> bookings;
 }

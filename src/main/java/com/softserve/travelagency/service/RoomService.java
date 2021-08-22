@@ -10,4 +10,5 @@ public interface RoomService {
     void saveRoom(Room room);
     Room getRoom(Long id);
     void deleteRoom(Long id);
+    List<Room> getRoomsByParams(String countryName, String roomType, String stars, boolean cleaning);
 }

@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class RoomServiceImpl implements RoomService {
 
-
+    @Autowired
     private RoomDAO roomDAO;
 
     @Override
@@ -37,5 +37,11 @@ public class RoomServiceImpl implements RoomService {
     @Transactional
     public void deleteRoom(Long id) {
         roomDAO.deleteRoom(id);
+    }
+
+    @Override
+    @Transactional
+    public List<Room> getRoomsByParams(String countryName, String roomType, String stars, boolean cleaning) {
+        return roomDAO.getRoomsByParams(countryName, roomType, stars, cleaning);
     }
 }

@@ -1,10 +1,13 @@
 package com.softserve.travelagency.model;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Timestamp;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -23,30 +26,29 @@ public class Booking {
 
     @NotNull
     @Column(name = "date_of_registration")
-    private Timestamp dateOfRegistration;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateOfRegistration;
 
     @NotNull
     @Column(name = "date_of_entrance")
-    private Timestamp dateOfEntrance;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateOfEntrance;
 
     @NotNull
     @Column(name = "date_of_departure")
-    private Timestamp dateOfDeparture;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateOfDeparture;
 
-    @NotNull
-    @Column(name = "booking_closed")
-    private boolean bookingClosed;
+//    @NotNull
+//    @Column(name = "booking_closed")
+//    private boolean bookingClosed;
 
 //    @NotNull
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
-    @JoinTable (
-            name = "booking_has_hotel",
-            joinColumns = @JoinColumn(name = "booking_id"),
-            inverseJoinColumns = @JoinColumn(name = "hotel_id")
-    )
-    private List<Hotel> hotels;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinColumn (name = "room_id")
+    private Room room;
 }

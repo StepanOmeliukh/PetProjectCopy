@@ -18,11 +18,9 @@ public class RoomController {
     @Autowired
     private HotelService hotelService;
 
-    private final Integer cleaningSrviceCost = 30;
-
     @PostMapping("/save")
     public String saveRoom(Room room, Hotel hotel){
-        room.setBooked(false);
+//        room.setBooked(false);
         Hotel hotelResult = hotelService.getHotelByUsername(hotel.getHotelName());
         room.setHotel(hotelResult);
 
