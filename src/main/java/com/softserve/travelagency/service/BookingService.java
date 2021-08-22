@@ -5,7 +5,7 @@ import com.softserve.travelagency.model.Booking;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface BookingSrvice {
+public interface BookingService {
 
     List<Booking> getBookings();
     void saveBooking(Booking booking);

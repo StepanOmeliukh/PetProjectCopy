@@ -24,7 +24,7 @@
             <a href="#about">About</a>
             <a href="/admin/list">Admin</a>
             <a href="#orders" style="float:right" >Orders</a>
-            <a href="#users"style="float:right">All users</a>
+            <a href="/admin/getUsers"style="float:right">All users</a>
         </div>
     </header>
     <section>

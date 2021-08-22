@@ -2,7 +2,7 @@ package com.softserve.travelagency.service.impl;
 
 import com.softserve.travelagency.dao.BookingDAO;
 import com.softserve.travelagency.model.Booking;
-import com.softserve.travelagency.service.BookingSrvice;
+import com.softserve.travelagency.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class BookingServiceImpl implements BookingSrvice {
+public class BookingServiceImpl implements BookingService {
 
     @Autowired
     private BookingDAO bookingDAO;

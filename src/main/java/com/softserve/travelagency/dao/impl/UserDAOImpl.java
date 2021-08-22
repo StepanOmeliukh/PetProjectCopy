@@ -1,5 +1,6 @@
 package com.softserve.travelagency.dao.impl;
 
+import com.softserve.travelagency.config.HibernateConfig;
 import com.softserve.travelagency.dao.UserDAO;
 import com.softserve.travelagency.model.User;
 import lombok.AllArgsConstructor;

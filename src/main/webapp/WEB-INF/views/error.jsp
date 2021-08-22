@@ -1,16 +1,25 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: bufan
-  Date: 8/5/2021
-  Time: 2:41 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
 <head>
-    <title>Title</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+    <title>Error page</title>
+    <style>
+        <%@include file="/WEB-INF/resources/css/error.css"%>
+    </style>
+
 </head>
+
 <body>
-    <span>Error</span>
+
+<center><h1 style="color:red; padding-top: 10%">Sorry, your record is not available</h1></center>
+<div class="container">
+       <form class="btn__item" action="/auth/success" method="GET">
+       <button type="submit">Back to main page</button>
+</form>
+</div>
+
 </body>
+
 </html>

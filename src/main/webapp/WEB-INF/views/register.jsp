@@ -10,33 +10,46 @@
     <title>Register</title>
 </head>
 <body>
-    <form:form class="form-signin" method="post" action="/registration/register" modelAttribute="user">
-        <h2>Please sign in</h2>
-        <p>
-            <label for="email" >Email </label>
+<div class="container">
+    <div class="header">
+        <h2>Create Account</h2>
+    </div>
+    <form:form class="form" id="form" method="post" action="/registration/register" modelAttribute="user">
+        <p> <div class="form-control">
+            <label for="email" >Your Email </label>
                 <form:input type="text" path="email" id="Email" placeholder="Email"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
                 <form:errors path="email"/>
-
+    </div>
         </p>
-        <p>
+        <p> <div class="form-control">
             <label for="firstName" >First name</label>
             <form:input type="text" id="firstName" path="firstName" class="form-control" placeholder="First name"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
             <form:errors path="firstName"/>
+    </div>
         </p>
-        <p>
+        <p> <div class="form-control">
             <label for="lastName" >Last name</label>
             <form:input type="text" id="lastName" path="lastName" class="form-control" placeholder="Last name"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
             <form:errors path="lastName"/>
+    </div>
         </p>
-        <p>
+        <p> <div class="form-control">
             <label for="password" >Password</label>
             <form:input type="password" id="password" path="password" class="form-control" placeholder="Password"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
             <form:errors path="password"/>
+    </div>
         </p>
         <button type="submit">Sign up</button>
     </form:form>
-
-    </div>
+</div>
 </body>
 
 </html>

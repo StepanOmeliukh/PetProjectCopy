@@ -8,7 +8,18 @@
     <title>Users</title>
 </head>
 <body>
-<table border="1">
+<header>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="booking">Booking</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#sign in" style="float:right" >Sign in</a>
+        <a href="#"style="float:right">Sign up</a>
+    </div>
+</header>
+<div style="text-align: center">
+<table border="1" class="styled-table">
     <thead>
     <tr>
         <th>Id</th>
@@ -18,6 +29,7 @@
     </thead>
     <tbody>
     <c:forEach var="user" items="${users}">
+
         <sf:form method="get" action="${ordersLink}">
             <tr>
                 <td>${user.id}</td>
@@ -30,4 +42,6 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
 </body>
+</html>

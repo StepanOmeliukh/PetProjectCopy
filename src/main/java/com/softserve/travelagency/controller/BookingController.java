@@ -5,7 +5,7 @@ import com.softserve.travelagency.model.*;
 
 import com.softserve.travelagency.model.util.RoomType;
 import com.softserve.travelagency.model.util.Stars;
-import com.softserve.travelagency.service.BookingSrvice;
+import com.softserve.travelagency.service.BookingService;
 import com.softserve.travelagency.service.CountryService;
 import com.softserve.travelagency.service.RoomService;
 import com.softserve.travelagency.service.UserService;
@@ -32,7 +32,7 @@ public class BookingController {
     @Autowired
     private CountryService countryService;
     @Autowired
-    private BookingSrvice bookingSrvice;
+    private BookingService bookingService;
     @Autowired
     private RoomService roomService;
     @Autowired
@@ -57,7 +57,7 @@ public class BookingController {
         @RequestParam("dateOfEntrance") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateOfEntrance,
         @RequestParam("dateOfDeparture") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateOfDeparture
     ) {
-        List<Booking> bookings = bookingSrvice.getBookingByDate(                    // Getting list of booked rooms
+        List<Booking> bookings = bookingService.getBookingByDate(                    // Getting list of booked rooms
                 dateOfEntrance, dateOfDeparture, country.getCountryName(),
                 room.getRoomsType(), hotel.getStars(), room.isCateringService()
         );
@@ -105,7 +105,7 @@ public class BookingController {
 //        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
         booking.setDateOfRegistration(LocalDate.now());
-        bookingSrvice.saveBooking(booking);
+        bookingService.saveBooking(booking);
         return "redirect:/booking";
     }
 }

@@ -28,6 +28,7 @@ public class User {
     @Column(unique = true, name = "email")
     private String email;
 
+    @NotBlank(message = "incorrect password")
     @Transient
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", message = "password must have minimum eight characters, at least one letter and one number")
     private String password;
@@ -43,6 +44,8 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+
+
     //    @NotNull
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
@@ -53,5 +56,11 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    public Role getRole() {
+        return role;
+    }
 
+    public void setRole(Role role) {
+        this.role = role;
+    }
 }

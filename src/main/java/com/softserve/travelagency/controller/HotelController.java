@@ -8,6 +8,7 @@ import com.softserve.travelagency.model.util.RoomType;
 import com.softserve.travelagency.service.CountryService;
 import com.softserve.travelagency.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,7 @@ public class HotelController {
     private HotelService hotelService;
     @Autowired
     private CountryService countryService;
-
+    @PreAuthorize("hasAuthority('developers:edit')")
     @PostMapping("/save")
     public String saveHotel( Hotel hotel, Country country) {
         Country countryForSave = countryService.getCountryByUsername(country.getCountryName());

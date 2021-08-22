@@ -17,10 +17,10 @@ public class RoomController {
     private RoomService roomService;
     @Autowired
     private HotelService hotelService;
+    private final Integer cleaningServiceCost = 30;
 
     @PostMapping("/save")
     public String saveRoom(Room room, Hotel hotel){
-//        room.setBooked(false);
         Hotel hotelResult = hotelService.getHotelByUsername(hotel.getHotelName());
         room.setHotel(hotelResult);
 
