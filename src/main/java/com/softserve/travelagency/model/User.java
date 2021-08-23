@@ -14,6 +14,8 @@ import java.util.List;
 
 @Data
 @Builder
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
@@ -56,11 +58,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "user")
+    private List<Booking> booking;
 }

@@ -18,6 +18,7 @@ public class HelloController {
     public String getAccessDenied() {
         return "/error";
     }
+
      @Autowired
      private CountryService countryService;
     @PreAuthorize("hasAuthority('developers:edit')")

@@ -34,7 +34,7 @@ public class Room {
     @NotNull
     @Column(name = "price")
     private Integer price;
-
+//
 //    @NotNull
 //    @Column(name = "active")
 //    private boolean booked;

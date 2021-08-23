@@ -24,7 +24,7 @@
     <tr>
         <th>Id</th>
         <th>Email</th>
-        <th>Action</th>
+        <th>Orders</th>
     </tr>
     </thead>
     <tbody>
@@ -34,9 +34,9 @@
             <tr>
                 <td>${user.id}</td>
                 <td>${user.email}</td>
-<%--                <td>--%>
-<%--                    <a href = "<c:url value ="/management/getOrders/${user.id}"/>">See Orders</a>--%>
-<%--                </td>--%>
+                <td>
+                    <a href = "<c:url value ="/management/getOrders/${user.id}"/>">See Orders</a>
+                </td>
             </tr>
         </sf:form>
     </c:forEach>

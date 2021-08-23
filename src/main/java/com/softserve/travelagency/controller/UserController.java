@@ -26,4 +26,11 @@ public class UserController {
         return "allUsers";
     }
 
+    @GetMapping("/getOrders")
+    @PreAuthorize("hasAuthority('developers:edit')")
+    public String getOrders(Model model, Long id) {
+
+        return "orders";
+    }
+
 }
