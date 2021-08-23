@@ -7,7 +7,7 @@
 </head>
 <body>
 <h2>Orders of ${user.email}</h2>
-<table border="1">
+<table border="1" class="styled-table">
     <thead>
     <tr>
         <th>Order Id</th>

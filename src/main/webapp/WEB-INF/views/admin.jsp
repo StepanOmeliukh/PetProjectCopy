@@ -18,25 +18,25 @@
 <body>
     <header>
         <div class="topnav">
-            <a class="active" href="#home">Home</a>
+            <a class="active" href="/auth/success">Home</a>
             <a href="/booking">Booking</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
             <a href="/admin/list">Admin</a>
-            <a href="#orders" style="float:right" >Orders</a>
-            <a href="/admin/getUsers"style="float:right">All users</a>
+
+            <a href="/admin/getUsers" style="float: right">All users</a>
         </div>
     </header>
-    <section>
+    <section class="myClass">
         <h2>Add Country</h2>
         <form action="/admin/country/save" method="post">
             <input type="text" name="countryName">
+            <br><br>
             <button type="submit">Submit</button>
         </form>
 
         <h2>Add Hotel</h2>
         <form action="/admin/hotel/save" method="post">
             <input type="text" name="hotelName" placeholder="Enter hotel name">
+            <br><br>
             <label>
                 Stars:
                 <select name="stars">
@@ -53,6 +53,7 @@
                     </c:forEach>
                 </select>
             </label>
+            <br><br>
             <button type="submit" onclick="{
                 if (document.getElementById('selectedCountry').value === 'No country selected')
                     alert('You have not selected a country');
@@ -69,6 +70,7 @@
                     </c:forEach>
                 </select>
             </label>
+            <br><br>
             <input type="submit" value="Submit2" onclick="{
                 document.getElementById('add_hotel').style.display = 'block';
             }"/>
@@ -90,10 +92,7 @@
                     <option [ngValue]="false">No</option>
                 </select>
             </label>
-            <label>
-                Price:
-                <input type="text" name="price">
-            </label>
+
 
             <label>
                 Hotels list:
@@ -102,7 +101,12 @@
                         <option value="${filteredHotels.hotelName}">${filteredHotels.hotelName}</option>
                     </c:forEach>
                 </select>
+            </label><br><br>
+            <label>
+                Price:
+                <input type="text" name="price">
             </label>
+            <br><br>
             <button type="submit">Submit</button>
         </form>
     </section>

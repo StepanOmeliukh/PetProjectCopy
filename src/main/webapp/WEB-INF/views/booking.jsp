@@ -13,12 +13,13 @@
 <body>
     <header>
         <div class="topnav">
-            <a class="active" href="#home">Home</a>
+            <a class="active" href="/auth/success">Home</a>
             <a href="booking">Booking</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <a href="#sign in" style="float:right" >Sign in</a>
-            <a href="#"style="float:right">Sign up</a>
+            <a href="/admin/list">Admin</a>
+
+            <form class="btn__item" style="float:right; " action="/auth/logout" method="POST">
+            <button class="btn" type="submit">Logout</button>
+            </form>
         </div>
     </header>
     <section class="booking">

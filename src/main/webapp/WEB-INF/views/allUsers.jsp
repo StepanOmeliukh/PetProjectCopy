@@ -11,11 +11,9 @@
 <header>
     <div class="topnav">
         <a class="active" href="#home">Home</a>
-        <a href="booking">Booking</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="#sign in" style="float:right" >Sign in</a>
-        <a href="#"style="float:right">Sign up</a>
+        <a href="/booking">Booking</a>
+        <a href="/admin/list">Admin</a>
+
     </div>
 </header>
 <div style="text-align: center">
